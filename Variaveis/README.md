@@ -6,3 +6,7 @@
 - short
 - long
 - float
+- int
+- boolean
+- double
+- char
