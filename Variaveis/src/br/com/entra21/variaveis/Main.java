@@ -47,16 +47,19 @@ public class Main {
 		 * 
 		 */
 
-		/*
-		 String nome; byte minhaIdade; float minhaAltura, salario;
+		 /*
+		 String nome;
+		 byte minhaIdade;
+		 float minhaAltura, salario;
 		  
 	
 		 Scanner entrada; entrada = new Scanner(System.in);
 		  
-		 System.out.println("Por favor informe seu nome."); nome = entrada.next();
+		 System.out.println("Por favor informe seu nome.");
+		 nome = entrada.next();
 		  
-		 System.out.println("Agora digite sua idade."); minhaIdade =
-		 entrada.nextByte();
+		 System.out.println("Agora digite sua idade.");
+		 minhaIdade = entrada.nextByte();
 		  
 		  
 		 System.out.println("Bem vindo " + nome + " agora consigo interagir com humanos e sei que sua idade é " + minhaIdade + ".");
@@ -86,14 +89,38 @@ public class Main {
 		
 		idade = Byte.parseByte(
 				JOptionPane.showInputDialog(null, "Informe sua idade.")
-				) ;
+				);
 		
 		salario = Float.parseFloat(
 				JOptionPane.showInputDialog(null, "Informe seu salário.")
 				);
-		JOptionPane.showMessageDialog(null, "Além de um nome bonito, é jovem com esses " + idade + " anos de , e pobre com esse salário de " +salario);
+		
+		JOptionPane.showMessageDialog(null, "Além de um nome bonito, é jovem com esses " + idade + " anos de idade, e pobre com esse salário de " +salario);
 		*/
 		
+
+		String nome;
+		byte idade;
+		float altura, peso;
+		
+		JOptionPane.showMessageDialog(null, "Olá! Vamos ver a relação entre o seu peso e altura");
+		nome = JOptionPane.showInputDialog(null, "Vamos lá, qual seu nome?");
+		idade = Byte.parseByte(
+				JOptionPane.showInputDialog(null, "Informe sua idade aqui.")
+				);
+		altura = Float.parseFloat(
+				JOptionPane.showInputDialog(null, "Agora vamos para a sua altura, quanto é?")
+				);
+		peso = Float.parseFloat(
+				JOptionPane.showInputDialog(null, "Para finalizar, quanto é seu peso?")
+				);
+		JOptionPane.showMessageDialog(null, "Esta é a relação entre o seu peso e altura, " + nome + (": ") + peso / (+ altura * altura));
+
+		
+		
+		
+			
+				
 	}
 
 }
