@@ -106,7 +106,7 @@ public class Main {
 		JOptionPane.showMessageDialog(null, "Olá! Vamos ver a relação entre o seu peso e altura");
 		nome = JOptionPane.showInputDialog(null, "Vamos lá, qual seu nome?");
 		idade = Byte.parseByte(
-				JOptionPane.showInputDialog(null, "Informe sua idade aqui.")
+				JOptionPane.showInputDialog(null, "Informe sua idade aqui.")  //o "null" serve para não atribuir nenhum valor, já que não citamos nenhuma variável
 				);
 		altura = Float.parseFloat(
 				JOptionPane.showInputDialog(null, "Agora vamos para a sua altura, quanto é?")
