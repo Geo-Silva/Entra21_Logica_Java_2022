@@ -6,6 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		
 		String nome;
 		byte idade;
 		float altura;
@@ -25,9 +26,7 @@ public class Main {
 		
 		JOptionPane.showMessageDialog(null, "Vejamos, esse ser é menor de idade?");
 		JOptionPane.showMessageDialog(null, resultado);
-		
-		
-				
+	
 	}
 
 }

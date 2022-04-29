@@ -4,6 +4,8 @@
 
 ````java
 if (condição){
+
 	//conjunto de códigos executados quando a condição resulta em true
+	
 }
 ````
