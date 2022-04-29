@@ -20,10 +20,12 @@ public class Main {
 		byte idade = 17;
 		
 		if (idade >= 18) { //é maior de idade?
+			
 			System.out.println("É maior de idade");
 		}
 		
 		if ( (idade >= 13) && (idade < 18) ) {  // é adolescente (13~17)
+			
 			System.out.println("É adolescente");
 		}
 			
