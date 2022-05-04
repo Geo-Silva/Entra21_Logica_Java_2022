@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-
+		
+		
 		System.out.println("Capturar 2 números e informar qual é o maior");
 
 		Scanner entrada = new Scanner(System.in);
@@ -54,7 +55,7 @@ public class Main {
 		}
 
 		System.out.println(calculo >= 16 ? "Já pode votar" : "Não pode votar");
-
+		
 	}
 
 }
