@@ -17,6 +17,10 @@ public class Main {
 				JOptionPane.showInputDialog(null, "E qual a sua altura, " + nome + "?")
 				);
 		
+		// resposta = resposta.toLowerCase();
+		// resposta = resposta.toUpperCase();
+		//esses são métodos de forçar o que foi digitado a ficar em maiusculo ou minusculo 
+		
 		if (altura1 < altura0) {
 			
 			JOptionPane.showMessageDialog(null, "Epa " + nome + ", infelizmente você não possuí a altura mínima para entrar."

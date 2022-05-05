@@ -25,6 +25,10 @@ public class Main {
 						+ "\n 11 = Novembro;"
 						+ "\n 12 = Dezembro;");
 		
+		// resposta = resposta.toLowerCase();
+		// resposta = resposta.toUpperCase();
+		//esses são métodos de forçar o que foi digitado a ficar em maiusculo ou minusculo 
+		
 		switch (mes) {
 		
 		case "1":

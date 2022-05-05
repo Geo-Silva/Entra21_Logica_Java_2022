@@ -8,7 +8,17 @@ public class Main {
 		
 		String resposta;
 		
-		resposta = JOptionPane.showInputDialog(null, "Qual plataforma você assiste filmes e séries? \n Netflix \n Amazon Prime \n Paramount \n Disney+ \n HBO Max \n Tente digitar igual eu coloquei aqui, por favor.");
+		resposta = JOptionPane.showInputDialog(null, "Qual plataforma você assiste filmes e séries?"
+				+ "\n Netflix "
+				+ "\n Amazon Prime "
+				+ "\n Paramount "
+				+ "\n Disney+ "
+				+ "\n HBO Max "
+				+ "\n Tente digitar igual eu coloquei aqui, por favor.");
+		
+		// resposta = resposta.toLowerCase();
+		// resposta = resposta.toUpperCase();
+		//esses são métodos de forçar o que foi digitado a ficar em maiusculo ou minusculo 
 		
 		switch (resposta) {
 		
@@ -38,6 +48,7 @@ public class Main {
 					+ "\n Ou tu disse algo que não tem nada a ver com a pergunta (analfabeto);"
 					+ "\n Ou tu teve um derrame no teclado (tá tudo bem?);");
 			break;
+				
 		}
 		
 		
