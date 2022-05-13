@@ -18,6 +18,8 @@ public class Main {
 							+ "\n3 - Entre 20 pessoas exibir a soma de todas as idades"
 							+ "\n4 - Entre 20 pessoas, quais são de maior"
 							+ "\n5 - Exibir o nome da pessoa mais nova"
+							+ "\n6 - Quantos números são pares"
+							+ "\n7 - Quantos números estão entre 0 e 100"
 							+ "\n8 - Ler sequencia de numeros e parar quando for negativo"
 							+ "\n9 - Solicite quantidade de notas e calcule a média "));
 
@@ -61,12 +63,13 @@ public class Main {
 				
 			case 6:
 				
-				
+				numerosPares();
 				
 				break;
 				
 			case 7:
 				
+				zeroECem();
 				
 				break;
 				
@@ -247,6 +250,7 @@ public class Main {
 		Scanner input = new Scanner(System.in);
 		float numeroA = 0, numeroB = 0, numeroC = 0;
 		float resultado;
+		String resposta;
 		
 		do {
 			
@@ -255,14 +259,100 @@ public class Main {
 			System.out.println("Escolha o segundo número");
 			numeroC = input.nextFloat();
 			
+			if (numeroC < 0 || numeroB < 0) {
+				
+				main(null);
+
+			}
+			
 			resultado = numeroB + numeroC;
 			
 			System.out.println("O resultado é: " + resultado);
 			
 			
-		}while (numeroB > 0);
+		}while(numeroB < 0 || numeroC < 0);
 		
-		main(null);
+		System.out.println("Fazer outra conta? \n1 - Sim \n2 - Não");
+		resposta = input.next();
+		
+		switch (resposta) {
+		
+		case "1":
+			
+			pararNegativo();
+			
+			break;
+			
+		case "2":
+			
+			main(null);
+			
+			break;
+		
+		default:
+			
+			main(null);
+			
+			break;
+	
+		}
+		
+
+		
+		
+	}
+
+	public static void zeroECem() {
+		
+		int zeroCem = 0;
+		int numero;
+		byte contador;
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Quantos números estão entre 0 e 100");
+
+		for (contador = 1; contador <= 7; contador++) {
+
+			System.out.println("Informe um valor:");
+			numero = input.nextInt();
+
+			if (numero >= 0 && numero <= 100) {
+
+				zeroCem++;
+				System.out.println("O último número informado estava entre 0 e 100.");
+			}
+
+		}
+
+		System.out.println("Entre " + (contador - 1) + " números, apenas " + zeroCem + " estão entre 0 e 100");
+		
+		
+	}
+
+	public static void numerosPares() {
+		
+		int pares = 0, numero;
+		byte contador;
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Quantos números são pares?");
+
+		for (contador = 1; contador <= 7; contador++) {
+
+			System.out.println("Informe um valor:");
+			numero = input.nextInt();
+
+			if (numero %2 == 0) {
+
+				pares++;
+				System.out.println("O último número informado era par.");
+			}
+
+		}
+
+		System.out.println("Entre " + (contador - 1) + " números, apenas " + pares + " são pares.");
+		
+		
 		
 		
 	}

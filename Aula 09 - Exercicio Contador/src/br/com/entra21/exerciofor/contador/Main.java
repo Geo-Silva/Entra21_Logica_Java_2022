@@ -1,5 +1,7 @@
 package br.com.entra21.exerciofor.contador;
 
+import java.util.Scanner;
+
 import javax.swing.JOptionPane;
 
 public class Main {
@@ -150,17 +152,29 @@ public class Main {
 
 	public static void tabuada1aoX() {
 		
-		byte numeroA, numeroB;
-		
-		JOptionPane.showMessageDialog(null, "Você verá agora todas as tabuadas! Do 1 ao 10!");
-			
-		
-			
-		for (int contador = 1; contador <= 10; contador ++) {
-			
-			JOptionPane.showMessageDialog(null, contador + " x " + numeroB + " = " + (contador * numeroB));
+		int zeroCem = 0, numero;
+		byte contador;
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Todas as tabuadas até o 10.");
+
+		for (contador = 1; contador <= 10; contador++) {
+
+			System.out.println("Digite qualquer número até o 10!");
+			numero = input.nextInt();
+
+			if (numero <= 10) {
+
+				zeroCem++;
+				System.out.println("O último número informado estava entre 0 e 100.");
 				
-		}for (int contador = 1; contador <= 10; contador ++) 
+			}
+
+		}
+
+		System.out.println("Entre " + (contador - 1) + " números, apenas " + zeroCem + " estão entre 0 e 100");
+		
+		
 		}
 		
 		
