@@ -45,9 +45,6 @@ public class Main {
 		 
 		 String nomeCompleto = "";
 		 
-
-
-
 		 String nome;
 		 byte minhaIdade;
 		 float minhaAltura, salario;
@@ -67,8 +64,6 @@ public class Main {
 
 
 		 Scanner input; input = new Scanner(System.in);
-		
-		 float altura, salario;
 		 
 		 System.out.println("Por favor, informe sua altura"); altura =
 		 input.nextFloat();
@@ -77,12 +72,6 @@ public class Main {
 		 salario = input.nextFloat();
 		  
 		 System.out.println("Me parece que sua altura é " + altura + "cm e seu salário é " + salario + ".");
-
-
-
-		String nome;
-		byte idade;
-		float salario;
 
 		nome = JOptionPane.showInputDialog(null, "Informe seu nome"); // syso + Scanner ao mesmo tempo
 		JOptionPane.showMessageDialog(null, "Que nome bonito, " + nome);

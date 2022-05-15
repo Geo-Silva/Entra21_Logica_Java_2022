@@ -12,7 +12,6 @@ public class Main {
 		byte dia, mes;
 		String nome; 
 		
-		
 		nome = JOptionPane.showInputDialog(null, "Vamos ver qual o seu signo? Primeiro, qual é o seu nome?");
 		dia = Byte.parseByte(
 				JOptionPane.showInputDialog(null, "Qual seu dia de nascimento?")

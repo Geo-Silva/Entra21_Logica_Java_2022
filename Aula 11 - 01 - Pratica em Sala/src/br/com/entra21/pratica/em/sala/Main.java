@@ -248,56 +248,23 @@ public class Main {
 	public static void pararNegativo() {
 		
 		Scanner input = new Scanner(System.in);
-		float numeroA = 0, numeroB = 0, numeroC = 0;
-		float resultado;
-		String resposta;
+		String nome, resposta;
+		int numero, soma = 0;
 		
 		do {
 			
-			System.out.println("Escolha o primeiro número");
-			numeroB = input.nextFloat();
-			System.out.println("Escolha o segundo número");
-			numeroC = input.nextFloat();
+			System.out.println("Que número você quer?");
+			numero = input.nextInt();
 			
-			if (numeroC < 0 || numeroB < 0) {
+			if (numero > 0) { // somente numeros positivos serão somados (naturais)
 				
-				main(null);
-
+				soma = soma + numero;
+				
 			}
-			
-			resultado = numeroB + numeroC;
-			
-			System.out.println("O resultado é: " + resultado);
-			
-			
-		}while(numeroB < 0 || numeroC < 0);
-		
-		System.out.println("Fazer outra conta? \n1 - Sim \n2 - Não");
-		resposta = input.next();
-		
-		switch (resposta) {
-		
-		case "1":
-			
-			pararNegativo();
-			
-			break;
-			
-		case "2":
-			
-			main(null);
-			
-			break;
-		
-		default:
-			
-			main(null);
-			
-			break;
-	
-		}
-		
 
+		}while(numero >= 0); //enquanto o número for maior ou igual a zero, repito.
+		
+		System.out.println("A soma é: " + soma);
 		
 		
 	}
@@ -311,7 +278,7 @@ public class Main {
 
 		System.out.println("Quantos números estão entre 0 e 100");
 
-		for (contador = 1; contador <= 7; contador++) {
+		for (contador = 1; contador <= 20; contador++) {
 
 			System.out.println("Informe um valor:");
 			numero = input.nextInt();
