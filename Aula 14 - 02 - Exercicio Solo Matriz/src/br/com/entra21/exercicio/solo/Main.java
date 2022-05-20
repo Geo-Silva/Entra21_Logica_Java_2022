@@ -5,106 +5,135 @@ import javax.swing.JOptionPane;
 public class Main {
 
 	public static void main(String[] args) {
-		
-		byte opcao = 0;
-		
+
+		byte opcao;
+		String nomeProf;
+
+		JOptionPane.showMessageDialog(null, "Bem vindo ao sistema de notas professor(a)!");
+		nomeProf = JOptionPane.showInputDialog(null, "Faça o Login primeiro!" + "\n Qual seu nome?");
+
 		do {
 
-			fazerMenu(opcao);
+			opcao = Byte.parseByte
+					(JOptionPane.showInputDialog(null, "O que você deseja fazer, " + nomeProf + "?"
+					+ "\n0 - Sair" 
+					+ "\n1 - Cadastrar novo aluno" + "\n2 - Declarar notas no sistema de um aluno"
+					+ "\n3 - Declarar notas no sistema de uma turma inteira" 
+					+ "\n4 - Fazer a média de notas.")
+					);
 
 			switch (opcao) {
-			
+
 			case 0:
-				
+
 				JOptionPane.showMessageDialog(null, "Saindo...");
-			
+
 				break;
-				
+
 			case 1:
-				
-				//cadastrarAluno();
-				
+
+				cadastrarAluno();
+
 				break;
-			
+
 			case 2:
-				
-				//declararNotaAluno();
-				
+
+				declararNotaAluno();
+
 				break;
-			
+
 			case 3:
-				
+
 				declararNotasTurmas();
-				
+
 				break;
-				
+
+			case 4:
+
+				fazerMedia();
+
+				break;
+
 			default:
 				
-				
+				JOptionPane.showMessageDialog(null, "Opcão inválida! Tente novamente.");
+
 				break;
 
 			}
-
+			
 		} while (opcao != 0);
 
 	}
 
-	public static void fazerMenu(byte opcao) {
+	public static void cadastrarAluno() {
 		
-		String nomeProf;
+		String nomeAluno;
 		
-		JOptionPane.showMessageDialog(null, "Bem vindo ao sistema de notas professor(a)!");
-		nomeProf = JOptionPane.showInputDialog(null, "Faça o Login primeiro!" + "\n Qual seu nome?");
-
-
-
-			opcao = Byte.parseByte(JOptionPane.showInputDialog(null, "O que você deseja fazer, "
-							+ nomeProf + "?"
-							+ "\n0 - Sair" 
-							+ "\n1 - Cadastrar novo aluno"
-							+ "\n2 - Declarar notas no sistema de um aluno"
-							+ "\n3 - Declarar notas no sistema de uma turma inteira")
-					);
+		nomeAluno = JOptionPane.showInputDialog(null, "Qual o nome do novo aluno a ser inserido no sistema?");
 		
+		JOptionPane.showMessageDialog(null, "Cadastro efetuado com sucesso!");
+		
+	}
+	
+	public static void declararNotaAluno() {
+
+		String aluno;
+		byte qtdMaterias;
+
+		aluno = JOptionPane.showInputDialog(null, "Qual o nome do aluno?");
+
+		qtdMaterias = Byte.parseByte(JOptionPane.showInputDialog(null, "Quantas materias serão?"));
+
+		float[] materias = new float[qtdMaterias];
+
+		for (byte nota = 0; nota < materias.length; nota++) {
+
+			materias[nota] = Float.parseFloat(
+					JOptionPane.showInputDialog(null, "Defina a nota para a " + (nota + 1) + "ª matéria de " + aluno));
+
+		}
+
+		JOptionPane.showMessageDialog(null, "Notas inseridas no sistema com sucesso!");
+
 	}
 
 	public static void declararNotasTurmas() {
-		
-		byte alunos[][];
-		byte qtdAlunos = 0, qtdNotas = 0;
-		
-		alunos = new byte[qtdAlunos][qtdNotas];
-		
-		qtdAlunos = Byte.parseByte(
-				JOptionPane.showInputDialog(null, "Quantos alunos têm nessa turma?")
-				);
-		
-		qtdNotas = Byte.parseByte(
-				JOptionPane.showInputDialog(null, "Quantas notas são para cada aluno?")
-				);
-		
-		for(byte estudante = 1; estudante <= alunos[qtdAlunos].length; estudante ++	) {
-			
-			JOptionPane.showMessageDialog(null, "Diga a nota do " + estudante + "º aluno");
-			//no novasNotas.length vai um [aluno] dentro pois é o vetor e dentro dele tem um valor 3.
-			//assim o contador "aluno" aumenta e passa por todos os vetores
-			//dependendo da quantidade de notas que for, ele vai mostrar o total de indicies dentro desse vetor
-			//na duvida, debuga que tu vai entender...
-			
-			for(byte nota = 0; nota < alunos[qtdNotas].length; nota ++) {
-				
-			alunos = Byte.parseByte(
-					JOptionPane.showInputDialog("Diga a " + nota + "ª nota")
-					);
-			
+
+		byte qtdAlunos, qtdNotas;
+		float definirNotas[][];
+		String nomeAluno;
+
+		qtdAlunos = Byte.parseByte(JOptionPane.showInputDialog(null, "Qual a quantidade de alunos?"));
+
+		qtdNotas = Byte.parseByte(JOptionPane.showInputDialog(null, "Qual a quantidade de notas por aluno?"));
+
+		definirNotas = new float[qtdAlunos][qtdNotas];
+
+		for (byte aluno = 0; aluno < definirNotas.length; aluno++) {
+
+			nomeAluno = JOptionPane.showInputDialog("Qual o nome do " + (aluno + 1) + "º aluno?");
+
+			for (byte nota = 0; nota < definirNotas[aluno].length; nota++) {
+
+				definirNotas[aluno][nota] = Float.parseFloat(
+						JOptionPane.showInputDialog(null, "Qual a " + (nota + 1) + "ª nota de " + nomeAluno));
+
+			}
 		}
+
+		JOptionPane.showMessageDialog(null, "Todas as notas foram inseridas no sistema com sucesso!");
+
+	}
+
+	public static void fazerMedia() {
 		
+		float totalNotas;
+		
+		totalNotas = Float.parseFloat(
+				JOptionPane.showInputDialog(null, "Quantas notas serão ao todo?")
+				);
 		
 		
 	}
-
-
-
-
-
 }
